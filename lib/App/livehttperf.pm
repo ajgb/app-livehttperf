@@ -399,20 +399,21 @@ sub run_tests {
                     eval {
                         $res = $ua->request($req, $OPTS{verbosity} == 1 ? sub { print "." } : () )
                             or die "No response\n";
-
-                        LOG "[$tid.$no.$rec_no] RES:\n", $res->headers->as_string if DEBUG;
-                        LOG "[$tid.$no.$rec_no] RES:\n", $res->as_string if TRACE;
                     };
+                    my $err = $@;
                     push @{ $rec_stats_data{$rec_no} }, tv_interval( $rec_stats_start );
 
                     if ( $res ) {
+                        LOG "[$tid.$no.$rec_no] RES:\n", $res->headers->as_string if DEBUG;
+                        LOG "[$tid.$no.$rec_no] RES:\n", $res->as_string if TRACE;
+
                         my $res_headers = $res->headers;
                         $bytes_recv += $res_headers->header('Content-Length') ||
                             (length($res_headers->as_string) + length($res->content));
 
                         $res_statuses{int($res->code / 100) .'xx'}++;
                     }
-                    if ( $@ || ! response_matched($exp_res, $res) ) {
+                    if ( $err || ! response_matched($exp_res, $res) ) {
                         $failed_requests++;
                         $rec_errors{$rec_no}++;
                         if ( ERROR ) {
@@ -424,7 +425,7 @@ sub run_tests {
                             }
                         }
                         if ( TRACE ) {
-                            LOG "  Exception: $@" if $@;
+                            LOG "  Exception: $err" if $err;
                         }
                     } else {
                         $successful_requests++;
