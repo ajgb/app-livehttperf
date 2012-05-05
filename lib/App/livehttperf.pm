@@ -17,8 +17,6 @@ use Time::Elapsed qw( -compile elapsed );
 use List::Util qw( sum );
 use utf8;
 
-our $VERSION = '0.01';
-
 my @recs;
 my %stats;
 my @concurrency;
@@ -744,27 +742,13 @@ sub run {
 
 1;
 
-__END__
-
-=pod
-
-=encoding utf-8
-
-=head1 NAME
-
-App::livehttperf - Real life web performance testing tool
-
-=head1 VERSION
-
-version 0.01
-
 =head1 SYNOPSIS
 
     livehttperf --help
 
 =head1 DESCRIPTION
 
-livehttperf is a web performance testing tool using recorded sessions from
+L<livehttperf> is a web performance testing tool using recorded sessions from
 L<LiveHTTP headers Firefox extension|http://livehttpheaders.mozdev.org/>.
 
 =head1 INSTALLATION
@@ -831,6 +815,8 @@ Use LibreOffice Calc to open saved result file (XLSX format).
 
 =over 4
 
+=item * L<livehttperf>
+
 =item * L<LiveHTTP headers Firefox extension|http://livehttpheaders.mozdev.org/>
 
 =item * L<Selenium IDE|http://seleniumhq.org/projects/ide/>
@@ -838,17 +824,6 @@ Use LibreOffice Calc to open saved result file (XLSX format).
 =item * L<httperf|http://www.hpl.hp.com/research/linux/httperf/docs.php>
 
 =back
-
-=head1 AUTHOR
-
-Alex J. G. Burzyński <ajgb@cpan.org>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2012 by Alex J. G. Burzyński <ajgb@cpan.org>.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
 
 =for Pod::Coverage
 LOG

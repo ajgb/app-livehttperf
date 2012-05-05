@@ -7,11 +7,8 @@ use App::livehttperf;
 
 App::livehttperf->run();
 
-__END__
-
-=pod
-
-=encoding utf-8
+# PODNAME: livehttperf
+# ABSTRACT: Real life web performance testing tool
 
 =head1 SYNOPSIS
 
