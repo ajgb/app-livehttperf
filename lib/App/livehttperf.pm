@@ -96,7 +96,7 @@ sub configure {
         'help' => sub { print_usage(); exit 0 },
     );
 
-    unless ( @ARGV || ! $rv ) {
+    unless ( @ARGV || $rv ) {
         print_usage();
         exit 1;
     }
