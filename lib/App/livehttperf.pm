@@ -276,7 +276,6 @@ sub parse_livehttp_log {
 
             $total_urls++;
 
-            last if @recs >= 3;
         };
     }
 }
