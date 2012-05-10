@@ -167,7 +167,6 @@ sub configure {
         $xls_urls = $xls->add_worksheet('URLs');
     }
 
-    $test_started = [ gettimeofday ];
 }
 
 sub parse_livehttp_log {
@@ -283,6 +282,7 @@ sub parse_livehttp_log {
 }
 
 sub run_tests {
+    $test_started = [ gettimeofday ];
 
     $|=1;
 
