@@ -6,6 +6,7 @@ use strict;
 use warnings;
 
 use HTTP::Request;
+use HTTP::Response;
 use LWP::UserAgent;
 use Parallel::ForkManager;
 use Getopt::Long;
@@ -48,8 +49,8 @@ my %OPTS = (
     output => undef,
     output_xls => undef,
 );
-# subs
 
+# subs
 sub LOG(@)  { print @_, "\n" }
 sub TRACE() { $OPTS{verbosity} >= 4; }
 sub DEBUG() { $OPTS{verbosity} >= 3; }
