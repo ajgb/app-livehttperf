@@ -2,7 +2,7 @@ NAME
     App::livehttperf - Real life web performance testing tool
 
 VERSION
-    version 0.02
+    version 0.03
 
 SYNOPSIS
         livehttperf --help
