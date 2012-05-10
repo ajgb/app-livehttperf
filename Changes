@@ -1,6 +1,8 @@
 Revision history for App-livehttperf
 
 {{$NEXT}}
+    Start the clock at the beggining of run_tests()
+    Remove limit of parsed records
 
 0.02   2012-05-09 22:06:09
     Log response outside of eval
